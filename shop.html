@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Nzima Fashion Store – Shop our full collection of shoes, clothes, and accessories.">
+    <title>Shop | Nzima Fashion Store</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- ===== NAVBAR ===== -->
+    <header class="navbar" id="navbar">
+        <div class="nav-inner">
+            <a href="index.html" class="nav-logo">
+                <span class="logo-icon">N</span>
+                <span>Nzima <em>Fashion</em></span>
+            </a>
+
+            <nav class="nav-links" id="navLinks">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="shop.html" class="nav-link active">Shop</a>
+                <a href="index.html#lookbook" class="nav-link">Lookbook</a>
+                <a href="index.html#about" class="nav-link">About</a>
+            </nav>
+
+            <div class="nav-actions">
+                <button class="icon-btn" id="searchToggle" title="Search" aria-label="Toggle search">
+                    <i class="fas fa-search"></i>
+                </button>
+                <button class="icon-btn" id="cartToggle" title="Cart" aria-label="Open cart">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span class="cart-badge" id="cartBadge">0</span>
+                </button>
+                <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- ===== SEARCH BAR (collapsible) ===== -->
+    <div class="search-overlay" id="searchOverlay">
+        <div class="search-container">
+            <i class="fas fa-search search-icon-inner"></i>
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Search for shoes, jackets, bags…"
+                autocomplete="off"
+                aria-label="Search products"
+            >
+            <button class="search-clear" id="searchClear" aria-label="Clear search">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- ===== SHOP PAGE HERO ===== -->
+    <section class="shop-page-hero">
+        <div class="shop-hero-content">
+            <p class="hero-tag">Browse Our Collection</p>
+            <h1 class="shop-hero-title">The <span class="gradient-text">Shop</span></h1>
+            <p class="hero-subtitle">Over 24 handpicked fashion items waiting for you.</p>
+        </div>
+        <div class="shop-hero-blobs">
+            <div class="blob blob-1"></div>
+            <div class="blob blob-2"></div>
+        </div>
+    </section>
+
+    <!-- ===== MAIN SHOP SECTION ===== -->
+    <main class="main-content" id="products-section">
+
+        <!-- Stats bar -->
+        <div class="stats-bar">
+            <div class="stat-item"><span class="stat-num" id="productCount">24</span><span class="stat-label">Products</span></div>
+            <div class="stat-divider"></div>
+            <div class="stat-item"><span class="stat-num">3</span><span class="stat-label">Categories</span></div>
+            <div class="stat-divider"></div>
+            <div class="stat-item"><span class="stat-num">Free</span><span class="stat-label">Delivery</span></div>
+        </div>
+
+        <!-- Section header + sort -->
+        <div class="section-header">
+            <div>
+                <h2 class="section-title">Our Collection</h2>
+                <p class="section-sub">Handpicked pieces for every occasion</p>
+            </div>
+            <div class="sort-wrap">
+                <label for="sortSelect" class="visually-hidden">Sort products</label>
+                <select id="sortSelect" class="sort-select">
+                    <option value="default">Sort: Featured</option>
+                    <option value="price-asc">Price: Low → High</option>
+                    <option value="price-desc">Price: High → Low</option>
+                    <option value="name-asc">Name: A → Z</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Inline search bar (always visible on shop page) -->
+        <div class="inline-search-wrap">
+            <div class="inline-search-box">
+                <i class="fas fa-search"></i>
+                <input type="text" id="inlineSearch" placeholder="Search products…" autocomplete="off" aria-label="Search products inline">
+            </div>
+        </div>
+
+        <!-- Category Filters -->
+        <div class="filter-bar" role="group" aria-label="Category filters">
+            <button class="filter-btn active" data-category="all" id="filter-all">
+                <i class="fas fa-th-large"></i> All
+            </button>
+            <button class="filter-btn" data-category="shoes" id="filter-shoes">
+                <i class="fas fa-shoe-prints"></i> Shoes
+            </button>
+            <button class="filter-btn" data-category="clothes" id="filter-clothes">
+                <i class="fas fa-tshirt"></i> Clothes
+            </button>
+            <button class="filter-btn" data-category="accessories" id="filter-accessories">
+                <i class="fas fa-gem"></i> Accessories
+            </button>
+        </div>
+
+        <!-- Product Grid -->
+        <div id="productList" class="products-grid" aria-live="polite" aria-label="Product listing"></div>
+
+    </main>
+
+    <!-- ===== CART SIDEBAR ===== -->
+    <aside class="cart-sidebar" id="cartSidebar" aria-label="Shopping cart">
+        <div class="cart-header">
+            <h3><i class="fas fa-shopping-bag"></i> Your Cart</h3>
+            <button class="cart-close" id="cartClose" aria-label="Close cart">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <div class="cart-empty">
+                <i class="fas fa-shopping-bag fa-3x"></i>
+                <p>Your cart is empty</p>
+                <span>Add some items to get started!</span>
+            </div>
+        </div>
+        <div class="cart-footer" id="cartFooter" style="display:none;">
+            <div class="cart-total">
+                <span>Total</span>
+                <span id="cartTotal">$0</span>
+            </div>
+            <button class="btn btn-primary checkout-btn" id="checkoutBtn">Checkout <i class="fas fa-arrow-right"></i></button>
+        </div>
+    </aside>
+    <div class="cart-backdrop" id="cartBackdrop"></div>
+
+    <!-- ===== TOAST NOTIFICATION ===== -->
+    <div class="toast" id="toast">
+        <i class="fas fa-check-circle"></i>
+        <span id="toastMsg">Added to cart!</span>
+    </div>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <span class="logo-icon">N</span>
+                <p>Nzima Fashion — where style meets purpose. Curated collections for the bold and the modern.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Shop</h4>
+                <a href="shop.html?cat=shoes">Shoes</a>
+                <a href="shop.html?cat=clothes">Clothes</a>
+                <a href="shop.html?cat=accessories">Accessories</a>
+                <a href="shop.html">New Arrivals</a>
+            </div>
+            <div class="footer-links">
+                <h4>Company</h4>
+                <a href="index.html#about">About Us</a>
+                <a href="#">Careers</a>
+                <a href="#">Press</a>
+                <a href="#">Contact</a>
+            </div>
+            <div class="footer-social">
+                <h4>Follow Us</h4>
+                <div class="social-icons">
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Nzima Fashion Store. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="shop.js"></script>
+</body>
+</html>
