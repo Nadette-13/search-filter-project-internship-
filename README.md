@@ -91,4 +91,4 @@ The project is hosted on GitHub Pages:
 3. Uses search bar to filter products
 4. JavaScript dynamically updates results without reloading the page
 
-tahnk you!!!
+thank you!!!
