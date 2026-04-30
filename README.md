@@ -9,7 +9,7 @@
 
 ---
 
-## 📌 Project Overview
+##  Project Overview
 
 This project is a **fashion e-commerce search filter system** developed during my internship.  
 It allows users to browse fashion items and filter products using a search feature.
@@ -22,7 +22,7 @@ The system is built using:
 
 ---
 
-## 🛠️ Technologies Used
+##  Technologies Used
 
 - HTML5 (Structure)
 - CSS3 (Styling and layout)
@@ -31,7 +31,7 @@ The system is built using:
 
 ---
 
-## 📂 Project Structure
+##  Project Structure
 search-filter-project-internship/
 │
 ├── index.html # Main landing page
@@ -47,9 +47,29 @@ search-filter-project-internship/
 └── assets/ # Images and media (if any)
 
 
+
+
+##  Deployment (Testing Environment)
+
+The project has been successfully deployed to a **testing environment** using GitHub Pages.
+
+ **Live Application:**  
+https://nadette-13.github.io/search-filter-project-internship/
+
+
+
+##  How It Works
+
+1. User opens the website
+2. Browses available fashion items
+3. Uses search bar to filter products
+4. JavaScript dynamically updates results without reloading the page
+
+
+
 ---
 
-## 🚀 How to Run the Project Locally
+##  How to Run the Project Locally
 
 ### Option 1: Open directly
 1. Download or clone the repository
@@ -65,7 +85,7 @@ search-filter-project-internship/
 
 ---
 
-## 🔍 Features
+##  Features
 
 - Product search functionality
 - Filter fashion items dynamically
@@ -76,19 +96,5 @@ search-filter-project-internship/
 
 ---
 
-## 🌐 Deployment
 
-The project is hosted on GitHub Pages:
-- Automatically deployed from the `main` branch
-- Accessible online anytime
-
----
-
-## 📌 How It Works
-
-1. User opens the website
-2. Browses available fashion items
-3. Uses search bar to filter products
-4. JavaScript dynamically updates results without reloading the page
-
-thank you!!!
+Thank you!!!
